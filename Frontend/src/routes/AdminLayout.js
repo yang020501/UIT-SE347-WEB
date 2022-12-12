@@ -16,10 +16,13 @@ import ProductViewAdmin from "../pages/Admin/ProductViewAdmin"
 import NoPage from "../pages/NoPage";
 import OrderViewAdmin from "../pages/Admin/OrderViewAdmin";
 import CustomerViewAdmin from "../pages/Admin/CustomerViewAdmin";
-
+import Backdropp from "../components/Backdropp";
 import { getAllProduct } from '../redux/product/productsSlice'
 import { getAllCategory } from "../redux/category/categorySlice";
 import AlertMessage from "../components/AlertMessage"
+import { getAllOrders } from "../redux/order/orderSlice";
+import { getAllCustomers } from "../redux/user/customerSlice";
+import { getAllUsers } from "../redux/user/staffSlice";
 
 const AdminLayout = () => {
   const user = useSelector(state => state.userState.user)
@@ -28,6 +31,9 @@ const AdminLayout = () => {
   useEffect(() => {
     dispatch(getAllProduct())
     dispatch(getAllCategory())
+    dispatch(getAllOrders())
+    dispatch(getAllCustomers())
+    dispatch(getAllUsers())
   }, [])
   useEffect(() => {
 
@@ -48,7 +54,7 @@ const AdminLayout = () => {
             <Route path="/product/:slug" element={<ProductViewAdmin />} />
             <Route path="/customer" element={<Customer />} />
             <Route path="/customer/:id" element={<CustomerViewAdmin />} />
-            {/* <Route path="/staff" element={<Staff />} /> */}
+            <Route path="/staff" element={<Staff />} />
             <Route path="/category" element={<Category />} />
             <Route path="/order" element={<Order />} />
             <Route path="/order/:id" element={<OrderViewAdmin />} />
@@ -57,8 +63,9 @@ const AdminLayout = () => {
             <Route path="*" element={<NoPage />}></Route>
           </Routes>
         </div>
-      </div>      
+      </div>
       <AlertMessage />
+      <Backdropp />
     </React.Fragment>
   )
 }

@@ -14,7 +14,7 @@ const ContentMain = props => {
                             onclick={props.headerLeftAction.action}
                             backgroundColor={'red'}
                             animate={true}
-                          icon='bx bx-arrow-back'
+                            icon='bx bx-arrow-back'
                         >
                             {props.headerLeftAction.title}
                         </Button>
@@ -34,7 +34,7 @@ const ContentMain = props => {
                             onclick={props.headerRightAction.action}
                             icon='bx bx-edit'
                             animate={true}
-                            backgroundColor={'green'}
+                            backgroundColor={props.headerRightAction.title === "Tạo mới" ? 'main' : 'green'}
                         >
                             {props.headerRightAction.title}
                         </Button> : <></>
