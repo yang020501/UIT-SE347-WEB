@@ -1,3 +1,9 @@
 
 ~WRL0652.tmp
 *.csv
+*.bkp
+Backend/SQLQuery1.sql
+Backend/src/main/resources/application.properties
+Backend/SQLQuery1.sql
+Backend/src/main/resources/application.properties
+.$Shop.drawio.bkp
