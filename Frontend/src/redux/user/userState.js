@@ -35,15 +35,15 @@ export const userState = createSlice({
     name: 'userState',
     initialState: {
         loading: false,
-        user: user,
-        token: token,
+        user: localStorage.getItem('user') !== null ? JSON.parse(localStorage.getItem('user')) : null,
+        token: localStorage.getItem('token') !== null ? JSON.parse(localStorage.getItem('token')) : null,
         errorMess: null,
         cart: []
     },
     reducers: {
         logout: (state) => {
             state.user = null;
-            state.errorMess = "";
+            state.errorMess = null;
             localStorage.removeItem('user')
             localStorage.removeItem('token')
         },
