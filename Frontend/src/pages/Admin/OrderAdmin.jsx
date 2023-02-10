@@ -65,7 +65,7 @@ const Order = () => {
     setorderDataSearch(rows)
   }, [rows])
   useEffect(() => {
-    if (orderData) {
+    if (orderData && orderData.length > 0) {
       const tmprows = orderData.map((item) => {
         return {
           ...item,
