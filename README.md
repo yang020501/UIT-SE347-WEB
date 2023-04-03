@@ -1,2 +1,2 @@
-# Web
-A basic e-commerce website with recommendation system model 
+# Clothes Webshop
+A Basic E-commerce Website with Admin + User sides.
